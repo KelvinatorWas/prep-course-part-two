@@ -12,10 +12,12 @@
  * q.remove(); // returns 1
  */
 
-class Queue {
-  add(n: number) {}
+ class Queue {
+  private queue:number[] = [];
+  
+  add(n: number) { this.queue.push(n);}
 
-  remove() {}
+  remove() {return this.queue.shift();}
 }
 
 export { Queue };
