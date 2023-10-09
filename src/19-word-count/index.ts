@@ -10,7 +10,15 @@
  */
 
 class Words {
-  count(str: string) {}
+  count(str: string): { [key: string]: number } {
+    const words:string[] = str.toLowerCase().split(/\s/g).filter(Boolean);
+
+    const wordCount:{[key:string]:number} = Object.create(null);
+    words.forEach((word:string) => { wordCount[word] = (wordCount[word] || 0) + 1;});
+
+
+    return wordCount;
+  }
 }
 
 export { Words };
