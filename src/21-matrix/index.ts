@@ -46,15 +46,21 @@ class Matrix {
   }
 
   get columns():number[][] {
-    const column: number[][] = new Array(this.matrix[0].length); // make new Array for size
-    for (let col = 0; col < this.matrix[0].length; col++) {
-      column[col] = new Array(this.matrix.length);
-      for (let row = 0;row < this.matrix.length; row++) {
-        column[col][row] = this.matrix[row][col];
-        }
-      }
-    return column;
-    }
+    /*
+    # pārmainam rows to columns, es pat kārtīgi nesaprotu matrix
+        [0]   [1]    [2]
+      [ 89, | 1903,|  3 ],
+      [ 18, |   3, |  1 ],
+      [  9, |   4, |800 ]
+
+      \/ \/ \/ \/ \/ \/ 
+
+      0:[  89, | 18, |   9],
+      1:[1903, |  3, |   4],
+      2:[   3, |  1, | 800]
+    */
+    return this.matrix[0].map((_, col) => this.matrix.map(row => row[col]));
   }
+}
 
 export { Matrix };
