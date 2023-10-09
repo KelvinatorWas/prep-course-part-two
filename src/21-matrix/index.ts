@@ -35,22 +35,22 @@
  */
 
 class Matrix {
-  private matrix3x3:number[][];
+  private matrix:number[][];
 
-  constructor(private matrix: string) {
-    this.matrix3x3 = matrix.split("\n").map(row => row.split(" ").map(Number));
+  constructor(private matrixInput: string) {
+    this.matrix = matrixInput.split("\n").map(row => row.split(" ").map(Number));
   }
 
   get rows():number[][] {
-    return this.matrix3x3;
+    return this.matrix;
   }
 
   get columns():number[][] {
-    const column: number[][] = new Array(this.matrix3x3[0].length);
-    for (let col = 0; col < this.matrix3x3[0].length; col++) {
-      column[col] = new Array(this.matrix3x3.length);
-      for (let row = 0;row < this.matrix3x3.length; row++) {
-        column[col][row] = this.matrix3x3[row][col];
+    const column: number[][] = new Array(this.matrix[0].length); // make new Array for size
+    for (let col = 0; col < this.matrix[0].length; col++) {
+      column[col] = new Array(this.matrix.length);
+      for (let row = 0;row < this.matrix.length; row++) {
+        column[col][row] = this.matrix[row][col];
         }
       }
     return column;
