@@ -59,7 +59,7 @@ class Matrix {
       1:[1903, |  3, |   4],
       2:[   3, |  1, | 800]
     */
-    return this.matrix[0].map((_, col) => this.matrix.map(row => row[col]));
+    return this.matrix.map((_, col) => this.matrix.map(row => row[col]));
   }
 }
 
