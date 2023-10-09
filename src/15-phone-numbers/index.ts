@@ -28,10 +28,15 @@
  */
 
 class PhoneNumber {
-  constructor(input: string) {}
+  private phoneNr:string
+  constructor(input: string) {
+    this.phoneNr = input.replace(/[^\w]/g,"");
+  }
 
   number() {
-    return "";
+    const nr = this.phoneNr.replace(/^1/, "");
+    // const regex:RegExp = /^[2-9]\d{2}[2-9]\d{6}$/
+    return /^[2-9]\d{2}[2-9]\d{6}$/.test(nr) ? nr : null;
   }
 }
 
