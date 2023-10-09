@@ -11,6 +11,11 @@
  * Write some code to determine whether a number is an Armstrong number.
  */
 
-function validate(n: number) {}
+function validate(n: number) {
+    // probably not the best way, but it works well
+    const value:number[] = (n.toString().split("").map((string) => Number(string)).map((num:number) => num ** n.toString().length));  
+    let endVal:number = 0; value.filter((num) => endVal += num); 
+    return n == endVal;
+}
 
 export { validate };
