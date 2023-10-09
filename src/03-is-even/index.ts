@@ -11,6 +11,8 @@
  */
 
 function isEven(n: number) {
+    // Ja 'n' ir 4 (binary - 10'0') zemākais bits ir 0, un izteiksme ir "(4 & 1 === 0)" tā ir patiesa. 
+    // Tātad 4 ir "even" skaitlis, jo zemākais bits "odd" skaitlim 1, tākā 5 ir (binary - 10'1'). 
     return (n & 1) === 0;
 }
 
