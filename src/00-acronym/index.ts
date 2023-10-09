@@ -7,7 +7,7 @@
  */
 
 function parse(input: string) {
-    let str:string[] = input.toUpperCase().replace(/[_-]/g, " ").split(" ");
+    const str:string[] = input.toUpperCase().replace(/[^a-zA-Z0-9']/g, " ").split(" ");
     return str.map((word:string) => word.charAt(0)).join(""); 
 }
 
