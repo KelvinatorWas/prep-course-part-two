@@ -35,15 +35,26 @@
  */
 
 class Matrix {
-  constructor(private matrix: string) {}
+  private matrix3x3:number[][];
 
-  get rows() {
-    return [];
+  constructor(private matrix: string) {
+    this.matrix3x3 = matrix.split("\n").map(row => row.split(" ").map(Number));
   }
 
-  get columns() {
-    return [];
+  get rows():number[][] {
+    return this.matrix3x3;
   }
-}
+
+  get columns():number[][] {
+    const column: number[][] = new Array(this.matrix3x3[0].length);
+    for (let col = 0; col < this.matrix3x3[0].length; col++) {
+      column[col] = new Array(this.matrix3x3.length);
+      for (let row = 0;row < this.matrix3x3.length; row++) {
+        column[col][row] = this.matrix3x3[row][col];
+        }
+      }
+    return column;
+    }
+  }
 
 export { Matrix };
