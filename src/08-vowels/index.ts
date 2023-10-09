@@ -9,6 +9,9 @@
  * vowels('Hello there!') === 4
  */
 
-function vowels(s: string) {}
+function vowels(s: string) {
+    return s.toLowerCase().split("").filter((letter:string) => ['a', 'e', 'i', 'o', 'u'].includes(letter)).length;
+}
+
 
 export { vowels };
