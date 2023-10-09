@@ -16,6 +16,13 @@
  *              '#####'
  */
 
-function pyramid(n: number) {}
+function pyramid(n: number): void {
+    if (n > 0) {
+        for (let y = 0, x = 1; y < n; y++, x++) {
+            let char = " ".repeat(n - x)
+            console.log(char +  "#".repeat(y + x) + char);
+        }
+    }   
+}
 
 export { pyramid };
