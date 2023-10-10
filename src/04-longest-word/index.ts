@@ -14,7 +14,7 @@
 
 function longestWord(sen: string) {
     let longestWord = "";
-    sen.replace(/[&!]/g, "").split(" ").map((word:string) => longestWord = longestWord.length < word.length ? word : longestWord);
+    sen.replace(/[^A-Za-z0-9\s]/g, "").split(" ").map((word:string) => longestWord = longestWord.length < word.length ? word : longestWord);
     return longestWord; 
 }   
 
